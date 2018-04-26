@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Styles.Render("~/Content/css")
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Democracy</h1>
+            <p class="lead">Votings system for a school</p>
+            @if (!this.User.IsInRole("Admin") && !this.User.IsInRole("User"))
+            {
+                <p class="lead">
+                    To use  the system, please log in with email and password,
+                    if is it your first time, please register into system
+                </p>
+            }
+        </div>
+        <div class="col-md-6 contenedor">
+            <div class="carta">
+                <div class="lado frente">
+                    <img src="~/Content/Images/onpe.jpg" alt="imagen" />
+
+                </div>
+                <div class="lado atras">
+                    <h1>Las proximas elecciones seran el <span>15 de junio!</span></h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>My Settings</h2>
+        <p>
+            Change your personal data and password.
+        </p>
+        @Html.ActionLink("My Settings", "MySettings", "Users", new { }, new { @class = "btn btn-primary" })
+        <a><img src="~/Content/Images/setting.png" alt="imagen" class="first-img" /></a>
+    </div>
+    <div class="col-md-4">
+        <h2>My Votings</h2>
+        <p>Vote for the differents candidates.</p>
+        @Html.ActionLink("My Votings", "MyVotings", "Votings", new { }, new { @class = "btn btn-warning" })
+        <img src="~/Content/Images/voting.jpg" alt="imagen" />
+    </div>
+    <div class="col-md-4">
+        <h2>Results</h2>
+        <p>See the votation results.</p>
+        @Html.ActionLink("Results", "Results", "Votings", new { }, new { @class = "btn btn-info" })
+        <img src="~/Content/Images/result.jpg" alt="imagen" />
+    </div>
+</div>
+

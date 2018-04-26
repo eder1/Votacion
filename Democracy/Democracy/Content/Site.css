@@ -1,0 +1,101 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.col-md-4 img {
+    max-width: 100%;
+    height: 260px;
+    width: 90%;
+}
+.col-md-4 img:hover {
+    width: 95%;
+}
+/**scroll*/
+.navbar-inverse.fondo-menu {
+    -webkit-transition: all .8s;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 5px black;
+    height: 70px;
+}
+/*---imagen 3d*/
+.jumbotron .row{
+    display:flex;
+}
+.contenedor {
+    width: 400px;
+    height: 300px;
+    -webkit-perspective: 700px;
+   /* box-shadow: 0 0 5px black;*/
+   flex:1 0;
+}
+
+.carta:hover {
+    transform: rotateY(180deg);
+}
+
+.carta {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 2s;
+}
+
+.lado {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.lado img {
+    width: 100%;
+    height: 100%;
+}
+
+.atras {
+    background: #c3a3a3;
+    transform: rotateY(180deg);
+}
+.atras h2{
+    text-align:center;
+}
+.atras h1 span{
+    color:red;
+}
+/*ir-arriba*/
+
+.ir-arriba {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: #12AFAF;
+    text-decoration: none;
+    z-index: 99999;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    display: none;
+    /*line-height: 0px; quitar espaciado */
+}

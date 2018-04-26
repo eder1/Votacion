@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Democracy.Models.VotingIndexView>
+
+@{
+    ViewBag.Title = "Votings";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { }, new { @class = "btn btn-primary"})
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.State.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateTimeEnd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsForAllUsers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsEnabledBlankVote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityVotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantityBlankVotes)
+        </th>
+        <th>
+            Winner
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.State.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTimeStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateTimeEnd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsForAllUsers)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsEnabledBlankVote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityVotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantityBlankVotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Winner.FullName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.VotingId }, new { @class = "btn btn-primary"}) 
+            @Html.ActionLink("Details", "Details", new { id = item.VotingId }, new { @class = "btn btn-warning" }) 
+            @Html.ActionLink("Results", "ShowResults", new { id = item.VotingId }, new { @class = "btn btn-default", target = "_blank" }) 
+            @Html.ActionLink("Closed", "Closed", new { id = item.VotingId }, new { @class = "btn btn-info",
+                                                onclick = "return confirm('Are you sure to close this votation')" }) 
+            @Html.ActionLink("Delete", "Delete", new { id=item.VotingId }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
